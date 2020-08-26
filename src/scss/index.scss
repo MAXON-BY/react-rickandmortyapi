@@ -1,0 +1,9 @@
+@import 'variables';
+@import 'libs/normalize';
+@import 'components/all';
+
+.container{
+  padding: 0px 1.5rem;
+}
+
+@import 'media/media';
