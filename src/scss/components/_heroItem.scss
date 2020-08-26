@@ -1,0 +1,64 @@
+.hero {
+  &-container {
+    background: $color_background_container;
+  }
+
+  &-list {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 0;
+
+    li {
+      background: $color_background;
+      color: #fff;
+      border-radius: 25px;
+      margin: 20px 0;
+      transition: $transition;
+
+      &:hover{
+        box-shadow: 0px 0px 8px $color_background_hover;
+        transition: $transition;
+      }
+    }
+  }
+
+  &-name > *{
+    color: white;
+  }
+
+
+  &-item {
+    display: flex;
+    align-items: center;
+
+  }
+
+  &-image {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 50px;
+    width: 50px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &-name {
+    color: $color_white;
+    margin: 0 10px;
+  }
+
+  &-more {
+    color: $color_main;
+    margin-left: auto ;
+    padding-right: 30px;
+
+      &:hover{
+        text-decoration: underline;
+        transition: 0.3s;
+      }
+  }
+
+}

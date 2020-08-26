@@ -1,18 +1,16 @@
 import React from 'react';
-import logo from './assets/img/logo.svg'
+import HomePage from "./pages/HomePage";
+import Header from "./components/Header";
 
 function App() {
     return (
         <div className="App">
-            <header>
-                <div className="header-logo">
-                    <a href="/">
-                        <img src={logo} alt="Rick and Morty"/>
-                    </a>
-                </div>
-            </header>
+            <Header/>
 
-            <h1>Hello Rick and Morty</h1>
+            <div className="main">
+               <HomePage/>
+            </div>
+
         </div>
     );
 }
