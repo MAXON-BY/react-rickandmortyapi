@@ -1,3 +1,7 @@
+header{
+  background: $color_white;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -10,6 +14,15 @@
 
     li{
       margin-left: 15px;
+    }
+
+    a {
+     transition: $transition;
+
+      &:hover{
+        transition: $transition;
+        color: $color_main;
+      }
     }
   }
 }

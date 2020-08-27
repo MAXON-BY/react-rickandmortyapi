@@ -32,6 +32,17 @@
     display: flex;
     align-items: center;
 
+    &-id{
+      width: 600px;
+      height: 220px;
+      display: flex;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+      overflow: hidden;
+      background: $color_background;
+      border-radius: 0.5rem;
+      margin: 0.75rem;
+    }
+
   }
 
   &-image {

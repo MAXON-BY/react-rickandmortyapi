@@ -4,7 +4,6 @@ import HeroSite from "../components/HeroSite";
 const HomePage = () => {
     return (
         <div className="home-page">
-            <HeroSite/>
 
             <section className="hero-container">
                 <div className="container">
