@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const HeroPage = () => {
     return (
@@ -30,9 +31,8 @@ const HeroPage = () => {
                         </div>
                     </div>
 
-
                     <div className="btn-block">
-                        <a href="/" className="back-page">Back to list...</a>
+                        <Link to="/" className="back-page">Back to list...</Link>
                     </div>
 
                 </div>

@@ -31,7 +31,7 @@ header{
     a {
      transition: $transition;
 
-      &:hover{
+      &:hover, &.active{
         transition: $transition;
         color: $color_main;
       }

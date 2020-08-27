@@ -6,6 +6,8 @@ import HeroPage from "./pages/HeroPage";
 import DocsPage from "./pages/DocsPage";
 import AboutPage from "./pages/AboutPage";
 import ContactsPage from "./pages/ContactsPage";
+import {Route, Switch} from "react-router-dom";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
     return (
@@ -14,11 +16,14 @@ function App() {
             <HeroSite/>
 
             <div className="main">
-                <HomePage/>
-                <HeroPage/>
-                <DocsPage/>
-                <AboutPage/>
-                <ContactsPage/>
+                <Switch>
+                    <Route path="/" exact component={HomePage}/>
+                    <Route path="/hero/:id" component={HeroPage}/>
+                    <Route path="/docs" component={DocsPage}/>
+                    <Route path="/about" component={AboutPage}/>
+                    <Route path="/contacts" component={ContactsPage}/>
+                    <Route component={NotFoundPage} />
+                </Switch>
             </div>
 
         </div>

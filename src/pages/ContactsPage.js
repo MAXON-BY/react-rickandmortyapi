@@ -1,4 +1,5 @@
 import React from 'react';
+import author from '../assets/img/author.jpeg'
 
 const ContactsPage = () => {
     return (
@@ -11,7 +12,7 @@ const ContactsPage = () => {
                         <h2>My contacts</h2>
                         
                         <div className="contacts-img">
-                            <img src="https://hhcdn.ru/photo/571995174.jpeg?t=1598632849&h=TQvb_c7QVtYna_zGJAU6Iw" alt="Max Nyrkov"/>
+                            <img src={author} alt="Max Nyrkov"/>
                         </div>
 
                         <div className="contacts-item phone">

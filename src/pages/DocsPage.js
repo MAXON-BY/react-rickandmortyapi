@@ -6,7 +6,14 @@ const DocsPage = () => {
 
             <section>
                 <div className="container">
-                    <p>Docs link <a href="https://rickandmortyapi.com/documentation">https://rickandmortyapi.com/documentation</a></p>
+                    <p>Docs link
+                        <a href="https://rickandmortyapi.com/documentation"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                        >
+                            https://rickandmortyapi.com/documentation
+                        </a>
+                    </p>
                 </div>
             </section>
 

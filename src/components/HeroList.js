@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const HeroList = () => {
     return (
@@ -11,7 +12,7 @@ const HeroList = () => {
                     <h3>Rick</h3>
                 </div>
 
-                <a className="hero-more" href="/">More...</a>
+                <Link className="hero-more" to="/">More...</Link>
             </div>
         </li>
     );
