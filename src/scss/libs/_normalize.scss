@@ -19,7 +19,7 @@ body {
   position: relative;
 }
 
-a,
+
 span,
 p,
 b,
@@ -28,7 +28,7 @@ h2,
 h3,
 h4,
 h5 {
-  color: $color_black;
+  color: $color_white;
 }
 
 h1 {
@@ -43,6 +43,11 @@ h2 {
 
 a {
   text-decoration: none;
+  color: $color_main;
+
+  &:hover{
+    text-decoration: underline;
+  }
 }
 
 img{

@@ -16,7 +16,7 @@ const HeroPage = () => {
                                 <h3>Rick</h3>
                             </div>
                             <div className="hero-item-status">
-                                <span className="status-icon status__active"></span>
+                                <span className="status-icon status__alive"></span>
                                 Dead - Human
                             </div>
                             <div className="hero-item-location hero-block">
