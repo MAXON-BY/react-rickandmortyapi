@@ -45,6 +45,10 @@ a {
   text-decoration: none;
 }
 
+img{
+  display: block;
+}
+
 @mixin noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */

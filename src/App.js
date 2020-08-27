@@ -11,7 +11,7 @@ function App() {
             <HeroSite/>
 
             <div className="main">
-                <HomePage/>
+                {/*<HomePage/>*/}
                 <HeroPage/>
             </div>
 

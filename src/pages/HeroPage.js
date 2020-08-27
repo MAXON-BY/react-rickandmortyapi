@@ -16,18 +16,23 @@ const HeroPage = () => {
                                 <h3>Rick</h3>
                             </div>
                             <div className="hero-item-status">
-                                <span className="status__active"></span>
+                                <span className="status-icon status__active"></span>
                                 Dead - Human
                             </div>
-                            <div className="hero-item-location">
+                            <div className="hero-item-location hero-block">
                                 <p>Last known location:</p>
                                 <p>Earth (Replacement Dimension)</p>
                             </div>
-                            <div className="hero-item-series">
+                            <div className="hero-item-series hero-block">
                                 <p>First seen in:</p>
                                 <p>Pickle Rick</p>
                             </div>
                         </div>
+                    </div>
+
+
+                    <div className="btn-block">
+                        <a href="/" className="back-page">Back to list...</a>
                     </div>
 
                 </div>

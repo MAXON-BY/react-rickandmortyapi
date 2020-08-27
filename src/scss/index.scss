@@ -2,8 +2,41 @@
 @import 'libs/normalize';
 @import 'components/all';
 
-.container{
+.container {
   padding: 0px 1.5rem;
+}
+
+.status {
+  &-icon{
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  &__alive {
+    background-color: $color_alive;
+  }
+
+  &__dead {
+    background-color: $color_dead;
+  }
+}
+
+.back-page{
+  color: $color_main;
+  transition: $transition;
+
+  &:hover{
+    text-decoration: underline;
+    transition: $transition;
+  }
+}
+
+.btn-block{
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 @import 'media/media';
