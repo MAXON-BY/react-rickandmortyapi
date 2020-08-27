@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import HeroSite from "./components/HeroSite";
 import HeroPage from "./pages/HeroPage";
 import DocsPage from "./pages/DocsPage";
+import AboutPage from "./pages/AboutPage";
+import ContactsPage from "./pages/ContactsPage";
 
 function App() {
     return (
@@ -15,6 +17,8 @@ function App() {
                 <HomePage/>
                 <HeroPage/>
                 <DocsPage/>
+                <AboutPage/>
+                <ContactsPage/>
             </div>
 
         </div>

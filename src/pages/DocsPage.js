@@ -2,7 +2,7 @@ import React from 'react';
 
 const DocsPage = () => {
     return (
-        <div className="docs-page">
+        <div className="page docs-page">
 
             <section>
                 <div className="container">
