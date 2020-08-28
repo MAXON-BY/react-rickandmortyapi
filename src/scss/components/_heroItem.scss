@@ -102,5 +102,14 @@
         transition: 0.3s;
       }
   }
+  &-noInfo {
+    color: $color_dead;
+    margin-left: auto ;
+    padding-right: 30px;
+
+      &:hover{
+        transition: 0.3s;
+      }
+  }
 
 }
