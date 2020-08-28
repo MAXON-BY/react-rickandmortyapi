@@ -1,5 +1,3 @@
-function* sagaWatcher(){
+function* sagaWatcher() {}
 
-}
-
-export default sagaWatcher
+export default sagaWatcher;
