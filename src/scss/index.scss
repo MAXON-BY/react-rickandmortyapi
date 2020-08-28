@@ -28,6 +28,10 @@
   &__Dead {
     background-color: $color_dead;
   }
+
+  &__unknown {
+    background-color: $color_unknown;
+  }
 }
 
 .back-page{
