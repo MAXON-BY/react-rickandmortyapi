@@ -2,16 +2,15 @@ import React, {useEffect, useState} from 'react';
 import {Link, useParams} from "react-router-dom";
 import Spinner from "../components/Spinner";
 import ErrorMsg from "../components/ErrorMsg";
+import HeroItem from "../components/HeroItem";
 
 const HeroPage = () => {
 
     const {id} = useParams();
 
-    console.log('id page hero', id)
-
     const [error, setError] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false)
-    const [heroes, setHeroes] = useState([])
+    const [hero, setHero] = useState([])
 
     useEffect(() => {
         setIsLoaded(true);
@@ -20,7 +19,7 @@ const HeroPage = () => {
             .then(
                 (result) => {
                     setIsLoaded(false);
-                    setHeroes(result.results);
+                    setHero(result);
                 },
                 (error) => {
                     setIsLoaded(false);
@@ -28,6 +27,8 @@ const HeroPage = () => {
                 }
             )
     }, [])
+
+    console.log('hero', hero)
 
     return (
         <div className="page hero-page">
@@ -39,28 +40,7 @@ const HeroPage = () => {
 
                     {error && <ErrorMsg/>}
 
-                    <div className="hero-item-id">
-                        <div className="hero-item-image">
-                            <img src="https://rickandmortyapi.com/api/character/avatar/345.jpeg" alt="rick"/>
-                        </div>
-                        <div className="hero-item-card">
-                            <div className="hero-item-name">
-                                <h3>Rick</h3>
-                            </div>
-                            <div className="hero-item-status">
-                                <span className="status-icon status__alive"></span>
-                                Dead - Human
-                            </div>
-                            <div className="hero-item-location hero-block">
-                                <p>Last known location:</p>
-                                <p>Earth (Replacement Dimension)</p>
-                            </div>
-                            <div className="hero-item-series hero-block">
-                                <p>First seen in:</p>
-                                <p>Pickle Rick</p>
-                            </div>
-                        </div>
-                    </div>
+                    {hero && <HeroItem hero={hero}/>}
 
                     <div className="btn-block">
                         <Link to="/" className="back-page">Back to list...</Link>
