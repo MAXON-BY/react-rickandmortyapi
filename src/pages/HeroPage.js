@@ -28,8 +28,6 @@ const HeroPage = () => {
             )
     }, [])
 
-    console.log('hero', hero)
-
     return (
         <div className="page hero-page">
 

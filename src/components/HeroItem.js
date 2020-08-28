@@ -14,12 +14,12 @@ const HeroItem = ({hero}) => {
                     <h3>{name}</h3>
                 </div>
                 <div className="hero-item-status">
-                    <span className="status-icon status__{status}"></span>
-                    {status} - {gender} - {species}
+                    <span className={`status-icon status__${status}`}></span>
+                    {gender} - {species}
                 </div>
                 <div className="hero-item-location hero-block">
                     <p>Last known location:</p>
-                    <p>{location && location.name}</p>
+                    <p>{location?.name}</p>
                 </div>
                 <div className="hero-item-series hero-block">
                     <p>First seen in:</p>
