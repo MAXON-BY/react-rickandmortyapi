@@ -10,8 +10,7 @@ const DocsPage = () => {
                         <a href="https://rickandmortyapi.com/documentation"
                            target="_blank"
                            rel="noopener noreferrer"
-                        >
-                            https://rickandmortyapi.com/documentation
+                        > https://rickandmortyapi.com/documentation
                         </a>
                     </p>
                 </div>

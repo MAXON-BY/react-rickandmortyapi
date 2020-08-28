@@ -1,18 +1,22 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-const HeroList = () => {
+const HeroList = ({hero}) => {
+
+    console.log('heroes', hero)
+    const {id, name, image, } = hero
+
     return (
-        <li>
+        <li key={id}>
             <div className="hero-item">
                 <div className="hero-image">
-                    <img src="https://rickandmortyapi.com/api/character/avatar/345.jpeg" alt="rick"/>
+                    <img src={image} alt="rick"/>
                 </div>
                 <div className="hero-name">
-                    <h3>Rick</h3>
+                    <h3>{name}</h3>
                 </div>
 
-                <Link className="hero-more" to="/">More...</Link>
+                <Link className="hero-more" to={`/hero/${id}`}>More...</Link>
             </div>
         </li>
     );
