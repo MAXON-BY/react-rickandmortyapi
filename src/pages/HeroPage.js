@@ -1,12 +1,43 @@
-import React from 'react';
-import {Link} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {Link, useParams} from "react-router-dom";
+import Spinner from "../components/Spinner";
+import ErrorMsg from "../components/ErrorMsg";
 
 const HeroPage = () => {
+
+    const {id} = useParams();
+
+    console.log('id page hero', id)
+
+    const [error, setError] = useState(null)
+    const [isLoaded, setIsLoaded] = useState(false)
+    const [heroes, setHeroes] = useState([])
+
+    useEffect(() => {
+        setIsLoaded(true);
+        fetch(`https://rickandmortyapi.com/api/character/${id}`)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setIsLoaded(false);
+                    setHeroes(result.results);
+                },
+                (error) => {
+                    setIsLoaded(false);
+                    setError(error);
+                }
+            )
+    }, [])
+
     return (
         <div className="page hero-page">
 
             <section className="hero-item-container">
                 <div className="container">
+
+                    {isLoaded && <Spinner/>}
+
+                    {error && <ErrorMsg/>}
 
                     <div className="hero-item-id">
                         <div className="hero-item-image">

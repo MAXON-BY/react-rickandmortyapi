@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import HeroList from "../components/HeroList";
 import Spinner from "../components/Spinner";
+import ErrorMsg from "../components/ErrorMsg";
 
 const HomePage = () => {
 
@@ -24,12 +25,7 @@ const HomePage = () => {
             )
     }, [])
 
-    // console.log('heroes',heroes)
-    // console.log('error', error)
-    // console.log('isLoaded', isLoaded)
-
     return (
-
         <div className="page home-page">
 
             <section className="hero-container">
@@ -43,7 +39,7 @@ const HomePage = () => {
 
                         {isLoaded && <Spinner/>}
 
-                        {error && <p>Something went wrong...</p>}
+                        {error && <ErrorMsg/>}
                     </div>
                 </div>
             </section>
