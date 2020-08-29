@@ -1,106 +1,103 @@
 .hero {
-  &-container {
-    background: $color_background_container;
-  }
-
-  &-block{
-    margin-top: 20px;
-
-    p{
-      color: $color_white;
-      font-size: 18px;
-
-      &:first-child{
-        color: rgb(158, 158, 158);
-        font-size: 14px;
-      }
+    &-container {
+        background: $color_background_container;
     }
 
-  }
+    &-block {
+        margin-top: 20px;
 
-  &-list {
-    max-width: 700px;
-    width: 100%;
-    margin: 0 auto;
+        p {
+            color: $color_white;
+            font-size: 18px;
 
-    li {
-      background: $color_background;
-      color: #fff;
-      border-radius: 25px;
-      margin: 20px 0;
-      transition: $transition;
-
-      &:hover{
-        box-shadow: 0px 0px 8px $color_background_hover;
-        transition: $transition;
-      }
-    }
-  }
-
-  &-name > *{
-    color: white;
-  }
-
-
-  &-item {
-    display: flex;
-    align-items: center;
-
-    &-id{
-      width: 600px;
-      min-height: 220px;
-      display: flex;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-      overflow: hidden;
-      background: $color_background;
-      border-radius: 0.5rem;
-      margin: 30px auto;
-      margin-top: 70px;
+            &:first-child {
+                color: rgb(158, 158, 158);
+                font-size: 14px;
+            }
+        }
     }
 
-    &-card{
-      margin: 20px;
+    &-list {
+        max-width: 700px;
+        width: 100%;
+        margin: 0 auto;
+
+        li {
+            background: $color_background;
+            color: #fff;
+            border-radius: 25px;
+            margin: 20px 0;
+            transition: $transition;
+
+            &:hover {
+                box-shadow: 0px 0px 8px $color_background_hover;
+                transition: $transition;
+            }
+        }
     }
 
-    &-name{
-      h3{
-        font-size: 1.5rem;
+    &-name > * {
+        color: white;
+    }
+
+    &-item {
+        display: flex;
+        align-items: center;
+
+        &-id {
+            width: 600px;
+            min-height: 220px;
+            display: flex;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+            overflow: hidden;
+            background: $color_background;
+            border-radius: 0.5rem;
+            margin: 30px auto;
+            margin-top: 70px;
+        }
+
+        &-card {
+            margin: 20px;
+        }
+
+        &-name {
+            h3 {
+                font-size: 1.5rem;
+                color: $color_main;
+            }
+        }
+
+        &-status {
+            color: $color_white;
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+
+    &-image {
+        border-radius: 50%;
+        overflow: hidden;
+        height: 50px;
+        width: 50px;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &-name {
+        color: $color_white;
+        margin: 0 10px;
+    }
+
+    &-more {
         color: $color_main;
-      }
+        margin-left: auto;
+        padding-right: 30px;
+
+        &:hover {
+            text-decoration: underline;
+            transition: 0.3s;
+        }
     }
-
-    &-status{
-      color: $color_white;
-      font-size: 16px;
-      font-weight: 500;
-    }
-  }
-
-  &-image {
-    border-radius: 50%;
-    overflow: hidden;
-    height: 50px;
-    width: 50px;
-
-    img {
-      max-width: 100%;
-    }
-  }
-
-  &-name {
-    color: $color_white;
-    margin: 0 10px;
-  }
-
-  &-more {
-    color: $color_main;
-    margin-left: auto ;
-    padding-right: 30px;
-
-      &:hover{
-        text-decoration: underline;
-        transition: 0.3s;
-      }
-  }
-
 }

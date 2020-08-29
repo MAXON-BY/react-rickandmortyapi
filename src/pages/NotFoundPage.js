@@ -1,10 +1,9 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const NotFoundPage = () => {
     return (
         <div className="page notfound-page">
-
             <section>
                 <div className="container">
                     <div className="notfound">
@@ -15,7 +14,6 @@ const NotFoundPage = () => {
                     </div>
                 </div>
             </section>
-
         </div>
     );
 };

@@ -1,40 +1,41 @@
-header{
-  background: $color_white;
+header {
+    background: $color_white;
 
-  a,
-  span,
-  p,
-  b,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    color: $color_black;
-  }
+    a,
+    span,
+    p,
+    b,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        color: $color_black;
+    }
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 0;
-
-  &-nav ul{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
 
-    li{
-      margin-left: 15px;
+    &-nav ul {
+        display: flex;
+        align-items: center;
+
+        li {
+            margin-left: 15px;
+        }
+
+        a {
+            transition: $transition;
+
+            &:hover,
+            &.active {
+                transition: $transition;
+                color: $color_main;
+            }
+        }
     }
-
-    a {
-     transition: $transition;
-
-      &:hover, &.active{
-        transition: $transition;
-        color: $color_main;
-      }
-    }
-  }
 }

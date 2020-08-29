@@ -1,18 +1,18 @@
-.notfound{
-  text-align: center;
+.notfound {
+    text-align: center;
 
-  &-404{
-    font-size: 180px;
-    font-weight: 100;
-    line-height: 1;
-  }
+    &-404 {
+        font-size: 180px;
+        font-weight: 100;
+        line-height: 1;
+    }
 
-  &-text{
-    font-size: 40px;
-  }
+    &-text {
+        font-size: 40px;
+    }
 
-  a{
-    display: inline-block;
-    margin-top: 20px;
-  }
+    a {
+        display: inline-block;
+        margin-top: 20px;
+    }
 }

@@ -1,13 +1,12 @@
 import React from 'react';
 
-const HeroItem = ({hero}) => {
-
-    const {name, gender, image, location, status, species  } = hero
+const HeroItem = ({ hero }) => {
+    const { name, gender, image, location, status, species } = hero;
 
     return (
         <div className="hero-item-id">
             <div className="hero-item-image">
-                <img src={image} alt={name}/>
+                <img src={image} alt={name} />
             </div>
             <div className="hero-item-card">
                 <div className="hero-item-name">
