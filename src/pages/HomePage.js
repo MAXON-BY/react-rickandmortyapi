@@ -2,11 +2,15 @@ import React, { useEffect, useState } from 'react';
 import HeroList from '../components/HeroList';
 import Spinner from '../components/Spinner';
 import ErrorMsg from '../components/ErrorMsg';
+import { heroList } from '../redux/reducers/heroReducer';
+import { useDispatch, useSelector } from 'react-redux';
 
 const HomePage = () => {
+    const dispatch = useDispatch();
+    const heroes = useSelector((state) => state.heroReducer.heroes);
+
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [heroes, setHeroes] = useState([]);
 
     useEffect(() => {
         setIsLoaded(true);
@@ -15,7 +19,7 @@ const HomePage = () => {
             .then(
                 (result) => {
                     setIsLoaded(false);
-                    setHeroes(result.results);
+                    dispatch(heroList(result.results));
                 },
                 (error) => {
                     setIsLoaded(false);

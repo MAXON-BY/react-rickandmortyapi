@@ -9,7 +9,7 @@ const HeroList = ({ hero }) => {
             More...
         </Link>
     ) : (
-        <div>No info :(</div>
+        <div className="hero-more__noinfo">No info :(</div>
     );
 
     return (
