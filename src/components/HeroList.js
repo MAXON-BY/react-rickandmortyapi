@@ -2,8 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const HeroList = ({ hero }) => {
-    console.log('heroes', hero);
     const { id, name, image } = hero;
+
+    const showMore = id ? (
+        <Link className="hero-more" to={`/hero/${id}`}>
+            More...
+        </Link>
+    ) : (
+        <div>No info :(</div>
+    );
 
     return (
         <li key={id}>
@@ -15,9 +22,7 @@ const HeroList = ({ hero }) => {
                     <h3>{name}</h3>
                 </div>
 
-                <Link className="hero-more" to={`/hero/${id}`}>
-                    More...
-                </Link>
+                {showMore}
             </div>
         </li>
     );
