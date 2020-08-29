@@ -3,13 +3,16 @@ import { Link, useParams } from 'react-router-dom';
 import Spinner from '../components/Spinner';
 import ErrorMsg from '../components/ErrorMsg';
 import HeroItem from '../components/HeroItem';
+import { useDispatch, useSelector } from 'react-redux';
+import { heroItem } from '../redux/reducers/heroReducer';
 
 const HeroPage = () => {
     const { id } = useParams();
+    const dispatch = useDispatch();
+    const hero = useSelector((state) => state.heroReducer.hero);
 
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [hero, setHero] = useState([]);
 
     useEffect(() => {
         setIsLoaded(true);
@@ -18,7 +21,7 @@ const HeroPage = () => {
             .then(
                 (result) => {
                     setIsLoaded(false);
-                    setHero(result);
+                    dispatch(heroItem(result));
                 },
                 (error) => {
                     setIsLoaded(false);

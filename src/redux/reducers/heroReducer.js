@@ -18,5 +18,5 @@ const heroReducer = createSlice({
     },
 });
 
-export const { heroList } = heroReducer.actions;
+export const { heroList, heroItem } = heroReducer.actions;
 export default heroReducer.reducer;
