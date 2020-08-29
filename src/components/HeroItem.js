@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import noImageFound from '../assets/img/noImageFound.png';
 
 const HeroItem = ({ hero }) => {
     const { name, gender, image, location, status, species } = hero;
@@ -27,6 +29,24 @@ const HeroItem = ({ hero }) => {
             </div>
         </div>
     );
+};
+
+HeroItem.defaultProps = {
+    id: null,
+    name: 'No name found...',
+    image: noImageFound,
+};
+
+HeroItem.propTypes = {
+    id: PropTypes.number,
+    name: PropTypes.string,
+    gender: PropTypes.string,
+    image: PropTypes.string,
+    location: PropTypes.shape({
+        name: PropTypes.string,
+    }),
+    status: PropTypes.string,
+    species: PropTypes.string,
 };
 
 export default HeroItem;

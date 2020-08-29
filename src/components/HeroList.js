@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import noImageFound from '../assets/img/noImageFound.png';
 
 const HeroList = ({ hero }) => {
     const { id, name, image } = hero;
@@ -26,6 +28,20 @@ const HeroList = ({ hero }) => {
             </div>
         </li>
     );
+};
+
+HeroList.defaultProps = {
+    id: null,
+    name: '',
+    image: noImageFound,
+};
+
+HeroList.propTypes = {
+    hero: PropTypes.shape({
+        id: PropTypes.number,
+        name: PropTypes.string,
+        image: PropTypes.string,
+    }),
 };
 
 export default HeroList;
