@@ -10,7 +10,7 @@ const heroReducer = createSlice({
     initialState,
     reducers: {
         heroList(state, action) {
-            state.heroes = action.payload;
+            state.heroes = [...state.heroes, ...action.payload];
         },
         heroItem(state, action) {
             state.hero = action.payload;

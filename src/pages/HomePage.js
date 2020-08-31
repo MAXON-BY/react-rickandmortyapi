@@ -9,12 +9,21 @@ const HomePage = () => {
     const dispatch = useDispatch();
     const heroes = useSelector((state) => state.heroReducer.heroes);
 
+    const [page, setPage] = useState(1);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
 
+    const handleScroll = (event) => {
+        const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
+
+        if (scrollHeight - scrollTop === clientHeight) {
+            setPage((prevState) => prevState + 1);
+        }
+    };
+
     useEffect(() => {
         setIsLoaded(true);
-        fetch('https://rickandmortyapi.com/api/character')
+        fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
             .then((res) => res.json())
             .then(
                 (result) => {
@@ -26,14 +35,14 @@ const HomePage = () => {
                     setError(error);
                 }
             );
-    }, []);
+    }, [page]);
 
     return (
         <div className="page home-page">
             <section className="hero-container">
                 <div className="container">
                     <div className="hero-list">
-                        <ul>
+                        <ul onScroll={handleScroll}>
                             {heroes.map((hero, index) => (
                                 <HeroList key={index} hero={hero} />
                             ))}

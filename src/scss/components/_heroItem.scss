@@ -22,12 +22,44 @@
         width: 100%;
         margin: 0 auto;
 
+        ul{
+            height: 720px;
+            overflow-y: scroll;
+
+            /* width */
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            /* Track */
+            &::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 5px grey;
+                border-radius: 10px;
+            }
+
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: $color_main;
+                border-radius: 10px;
+            }
+
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+                background: $color_main_hover;
+            }
+        }
+
         li {
             background: $color_background;
             color: #fff;
             border-radius: 25px;
             margin: 20px 0;
             transition: $transition;
+            margin-right: 15px;
+
+            &:first-child{
+                margin-top: 0;
+            }
 
             &:hover {
                 box-shadow: 0px 0px 8px $color_background_hover;
