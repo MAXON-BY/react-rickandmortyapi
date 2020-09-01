@@ -10,23 +10,23 @@ import { Route, Switch } from 'react-router-dom';
 import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
-    return (
-        <div className="App">
-            <Header />
-            <HeroSite />
+  return (
+    <div className="App">
+      <Header />
+      <HeroSite />
 
-            <div className="main">
-                <Switch>
-                    <Route path="/" exact component={HomePage} />
-                    <Route path="/hero/:id" component={HeroPage} />
-                    <Route path="/docs" component={DocsPage} />
-                    <Route path="/about" component={AboutPage} />
-                    <Route path="/contacts" component={ContactsPage} />
-                    <Route component={NotFoundPage} />
-                </Switch>
-            </div>
-        </div>
-    );
+      <div className="main">
+        <Switch>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/hero/:id" component={HeroPage} />
+          <Route path="/docs" component={DocsPage} />
+          <Route path="/about" component={AboutPage} />
+          <Route path="/contacts" component={ContactsPage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </div>
+    </div>
+  );
 }
 
 export default App;

@@ -8,8 +8,8 @@ import { rootReducer } from './rootReducer';
 // const middleware = [...getDefaultMiddleware({ thunk: false }), saga];
 
 export const store = configureStore({
-    reducer: rootReducer,
-    // middleware,
+  reducer: rootReducer,
+  // middleware,
 });
 
 // saga.run(sagaWatcher);
