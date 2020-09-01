@@ -1,26 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  heroes: [],
+  heroes: {},
   hero: {},
-  page: 1,
+  currentPage: null,
 };
 
 const heroReducer = createSlice({
   name: 'heroes',
   initialState,
   reducers: {
-    heroList(state, action) {
-      state.heroes = [...state.heroes, ...action.payload];
+    heroList(state, { payload }) {
+      state.heroes[state.currentPage] = payload;
     },
-    heroPage(state, action) {
-      state.page = action.payload;
+    heroItem(state, { payload }) {
+      state.hero[payload.id] = payload.result;
     },
-    heroItem(state, action) {
-      state.hero = action.payload;
+    setPage(state, { payload }) {
+      state.currentPage = payload;
     },
   },
 });
 
-export const { heroList, heroItem, heroPage } = heroReducer.actions;
+export const { heroList, setPage, heroItem } = heroReducer.actions;
 export default heroReducer.reducer;

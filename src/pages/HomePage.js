@@ -1,55 +1,62 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import HeroList from '../components/HeroList';
 import Spinner from '../components/Spinner';
 import ErrorMsg from '../components/ErrorMsg';
-import { heroList, heroPage } from '../redux/reducers/heroReducer';
+import { heroList, setPage } from '../redux/reducers/heroReducer';
 import { useDispatch, useSelector } from 'react-redux';
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const heroes = useSelector((state) => state.heroReducer.heroes);
-  const page = useSelector((state) => state.heroReducer.page);
+  const { heroes, currentPage } = useSelector((state) => state.heroReducer);
 
   const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
 
   const handleScroll = (event) => {
     const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
 
     if (scrollHeight - scrollTop === clientHeight) {
-      dispatch(heroPage(page + 1));
+      dispatch(setPage(currentPage + 1));
     }
   };
 
   useEffect(() => {
-    setIsLoaded(true);
-    fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(false);
-          dispatch(heroList(result.results));
-        },
-        (error) => {
-          setIsLoaded(false);
-          setError(error);
-        }
-      );
-  }, [page]);
+    const shouldLoadHeroes = !heroes[currentPage];
+    !currentPage && dispatch(setPage(1));
+    if (shouldLoadHeroes) {
+      fetch(`https://rickandmortyapi.com/api/character/?page=${currentPage}`)
+        .then((res) => res.json())
+        .then(
+          (result) => {
+            dispatch(heroList(result.results));
+          },
+          (error) => {
+            setError(error);
+          }
+        );
+    }
+  }, [currentPage, dispatch, heroes]);
+
+  const showSpinner = !heroes[currentPage] && <Spinner />;
+
+  const renderHeroesInfo = (
+    <ul onScroll={handleScroll}>
+      {Object.values(heroes).map((heroesPerPage) =>
+        heroesPerPage.map((hero) => (
+          <Fragment key={hero.id}>
+            <HeroList hero={hero} />
+          </Fragment>
+        ))
+      )}
+    </ul>
+  );
 
   return (
     <div className="page home-page">
       <section className="hero-container">
         <div className="container">
           <div className="hero-list">
-            <ul onScroll={handleScroll}>
-              {heroes.map((hero, index) => (
-                <HeroList key={index} hero={hero} />
-              ))}
-            </ul>
-
-            {isLoaded && <Spinner />}
-
+            {renderHeroesInfo}
+            {showSpinner}
             {error && <ErrorMsg />}
           </div>
         </div>

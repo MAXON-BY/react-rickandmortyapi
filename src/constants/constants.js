@@ -1,0 +1,1 @@
+export const RESPONSE_DEFAULT_SIZE = 20;
