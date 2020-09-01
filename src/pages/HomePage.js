@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import HeroList from '../components/HeroList';
 import Spinner from '../components/Spinner';
 import ErrorMsg from '../components/ErrorMsg';
-import { heroList } from '../redux/reducers/heroReducer';
+import { heroList, heroPage } from '../redux/reducers/heroReducer';
 import { useDispatch, useSelector } from 'react-redux';
 
 const HomePage = () => {
     const dispatch = useDispatch();
     const heroes = useSelector((state) => state.heroReducer.heroes);
+    const page = useSelector((state) => state.heroReducer.page);
 
-    const [page, setPage] = useState(1);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -17,7 +17,7 @@ const HomePage = () => {
         const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
 
         if (scrollHeight - scrollTop === clientHeight) {
-            setPage((prevState) => prevState + 1);
+            dispatch(heroPage(page + 1));
         }
     };
 
