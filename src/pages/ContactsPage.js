@@ -1,5 +1,13 @@
 import React from 'react';
 import author from '../assets/img/author.jpeg';
+import {
+  AUTHOR_LINKEDIN_LINK,
+  AUTHOR_LINKEDIN_NICK,
+  AUTHOR_NAME,
+  AUTHOR_PHONE,
+  AUTHOR_TELEGRAM_LINK,
+  AUTHOR_TELEGRAM_NICK,
+} from '../constants/constants';
 
 const ContactsPage = () => {
   return (
@@ -10,21 +18,21 @@ const ContactsPage = () => {
             <h2>My contacts</h2>
 
             <div className="contacts-img">
-              <img src={author} alt="Max Nyrkov" />
+              <img src={author} alt={AUTHOR_NAME} />
             </div>
 
             <div className="contacts-item phone">
               <h4>Phone</h4>
               <p>
-                <a href="tel:+375445340362">+375 44 534-03-62</a>
+                <a href={'tel:' + AUTHOR_PHONE}>{AUTHOR_PHONE}</a>
               </p>
             </div>
 
             <div className="contacts-item telega">
               <h4>Telegram</h4>
               <p>
-                <a href="https://t.me/nyrkov" rel="noopener noreferrer" target="_blank">
-                  @nyrkov
+                <a href={AUTHOR_TELEGRAM_LINK} rel="noopener noreferrer" target="_blank">
+                  {AUTHOR_TELEGRAM_NICK}
                 </a>
               </p>
             </div>
@@ -32,12 +40,8 @@ const ContactsPage = () => {
             <div className="contacts-item linked">
               <h4>LinkedIn</h4>
               <p>
-                <a
-                  href="https://www.linkedin.com/in/maxon89/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  maxon89
+                <a href={AUTHOR_LINKEDIN_LINK} rel="noopener noreferrer" target="_blank">
+                  {AUTHOR_LINKEDIN_NICK}
                 </a>
               </p>
             </div>
