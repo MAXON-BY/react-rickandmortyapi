@@ -1,3 +1,4 @@
+https://github.com/MAXON-BY/react-rickandmortyapi/tree/master/public/screenshot.png
 
 ## Используемые команды
 
@@ -10,3 +11,9 @@
 - react
 - react-dom
 - node-sass
+- prop-types
+- react-loader-spinner
+- react-redux
+- react-router-dom
+- react-test-renderer
+- redux-saga
