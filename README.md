@@ -1,4 +1,4 @@
-https://github.com/MAXON-BY/react-rickandmortyapi/tree/master/public/screenshot.png
+![Screen](https://github.com/MAXON-BY/react-rickandmortyapi/raw/master/public/screenshot.png)
 
 ## Используемые команды
 
