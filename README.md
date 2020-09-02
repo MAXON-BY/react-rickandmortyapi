@@ -17,6 +17,7 @@ https://rickandmortyapi.com/api/
 - node-sass
 - prop-types
 - react-loader-spinner
+- @reduxjs/toolkit
 - react-redux
 - react-router-dom
 - react-test-renderer
