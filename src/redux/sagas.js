@@ -1,10 +1,14 @@
-import { heroList } from './reducers/heroReducer';
-import { put, takeEvery } from '@redux-saga/core/effects';
+import { heroItem, heroList, setPage } from './reducers/heroReducer';
+import { takeEvery } from '@redux-saga/core/effects';
+
+function* sagaWorker() {
+  // yield put('heroes/heroList');
+  // yield put('heroes/setPage');
+  // yield put('heroes/heroItem');
+}
 
 export function* sagaWatcher() {
   yield takeEvery(heroList, sagaWorker);
-}
-
-function* sagaWorker() {
-  yield put();
+  yield takeEvery(heroItem, sagaWorker);
+  yield takeEvery(setPage, sagaWorker);
 }
