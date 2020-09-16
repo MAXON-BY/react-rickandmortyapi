@@ -23,16 +23,16 @@ const HomePage = () => {
     const shouldLoadHeroes = !heroes[currentPage];
     !currentPage && dispatch(setPage(1));
     if (shouldLoadHeroes) {
-      // fetch(`https://rickandmortyapi.com/api/character/?page=${currentPage}`)
-      //   .then((res) => res.json())
-      //   .then(
-      //     (result) => {
-      //       dispatch(heroList(result.results));
-      //     },
-      //     (error) => {
-      //       setError(error);
-      //     }
-      //   );
+      fetch(`https://rickandmortyapi.com/api/character/?page=${currentPage}`)
+        .then((res) => res.json())
+        .then(
+          (result) => {
+            dispatch(heroList(result.results));
+          },
+          (error) => {
+            setError(error);
+          }
+        );
     }
   }, [currentPage, dispatch, heroes]);
 

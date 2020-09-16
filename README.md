@@ -20,5 +20,3 @@ https://rickandmortyapi.com/api/
 - @reduxjs/toolkit
 - react-redux
 - react-router-dom
-- react-test-renderer
-- redux-saga

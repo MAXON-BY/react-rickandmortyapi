@@ -21,17 +21,17 @@ const HeroPage = () => {
       dispatch(setPage(page));
     }
     if (!hero[id]) {
-    //   fetch(`https://rickandmortyapi.com/api/character/${id}`)
-    //     .then((res) => res.json())
-    //     .then(
-    //       (result) => {
-    //         dispatch(heroItem({ id, result }));
-    //       },
-    //       (error) => {
-    //         setError(error);
-    //       }
-    //     );
-    // }
+      fetch(`https://rickandmortyapi.com/api/character/${id}`)
+        .then((res) => res.json())
+        .then(
+          (result) => {
+            dispatch(heroItem({ id, result }));
+          },
+          (error) => {
+            setError(error);
+          }
+        );
+    }
   }, [id, dispatch, hero, currentPage]);
 
   return (
